@@ -7,4 +7,4 @@ from .serializers import AartikelSerializer
 class ArtikelViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     permision_classes = [AllowAny, ]
     serializer_class = AartikelSerializer
-    queryset = Artikel.objects.all()
+    queryset = Artikel.objects.filter(publish=True).order_by('-create')

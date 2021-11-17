@@ -12,6 +12,7 @@ class Artikel(CommondBase):
     cover_image_url = models.URLField(max_length=250, blank=True)
     cover_intro = models.TextField(max_length=250, blank=True)
     tags = models.ManyToManyField(Tag)
+    publish = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.slug is None or self.slug == '':
