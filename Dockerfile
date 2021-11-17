@@ -14,9 +14,9 @@ ENV DOCKER_CONTAINER 1
 #     && ldconfig
 
 RUN mkdir /src
-# RUN mkdir /env_root
-# RUN mkdir /env_root/static_root
-# RUN mkdir /env_root/media_root
+RUN mkdir /env_root
+RUN mkdir /env_root/static_root
+RUN mkdir /env_root/media_root
 
 WORKDIR /src
 COPY . /src/

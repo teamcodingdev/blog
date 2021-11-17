@@ -10,6 +10,8 @@ services:
       - web
     volumes:
       - ./nginx/:/src/nginx/
+      - static_volume:/env_root/static_root/
+      - media_volume:/env_root/media_root/
   web:
     build: .
     restart: always
@@ -18,5 +20,11 @@ services:
       - 8000
     volumes:
       - .:/src/
+      - static_volume:/env_root/static_root/
+      - media_volume:/env_root/media_root/
     env_file:
       - ./.env
+
+volumes:
+  static_volume:
+  media_volume:
