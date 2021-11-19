@@ -28,5 +28,6 @@ class ArtikelLiteSerializer(ArtikelSerializer):
             'id',
             'slug', 'title',
             'cover_image_url',
-            'publish'
+            'publish',
+            'duration',
         ]
