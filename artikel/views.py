@@ -20,7 +20,7 @@ class ArtikelViewset(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
     def get_queryset(self):
         queryset = super().get_queryset()
         review = self.request.GET.get('review', None)
-        if review:
+        if review == '1':
             return queryset
 
         return queryset.filter(publish=True)
