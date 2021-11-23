@@ -21,4 +21,4 @@ class ArtkelAdmin(admin.ModelAdmin):
 
     @admin.display(description='Review')
     def get_review_url(self, obj):
-        return format_html('<a href="https://teamcoding.netlify.app/artikel/{}/?review=1" target="_blank">https://teamcoding.netlify.app/artikel/{}</a>', obj.slug, obj.slug)
+        return format_html('<a href="http://teamcoding.netlify.app/artikel/{}/?review=1" target="_blank">https://teamcoding.netlify.app/artikel/{}</a>', obj.slug, obj.slug)
