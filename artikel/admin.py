@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin.decorators import action
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
 
@@ -18,6 +19,12 @@ class ArtkelAdmin(admin.ModelAdmin):
         'tags', 'publish'
     ]
     readonly_fields = ['get_review_url', 'publish']
+
+    actions = ['publish_artikel_action']
+
+    @admin.action(description='Publish selected artikel')
+    def publish_artikel_action(self, request, queryset):
+        queryset.update(publish=True)
 
     @admin.display(description='Review')
     def get_review_url(self, obj):
