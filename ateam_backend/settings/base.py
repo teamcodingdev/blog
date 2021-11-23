@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from os import truncate
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -121,6 +122,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000"
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 TINYMCE_DEFAULT_CONFIG = {
     "theme": "silver",
