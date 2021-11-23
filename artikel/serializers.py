@@ -30,5 +30,6 @@ class ArtikelLiteSerializer(ArtikelSerializer):
             'cover_image_url',
             'publish',
             'duration',
+            'tags',
             'create'
         ]
