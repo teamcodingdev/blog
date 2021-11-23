@@ -1,3 +1,4 @@
+from os import truncate
 from django.db import models
 from django.utils.text import slugify
 
@@ -11,7 +12,7 @@ class Artikel(CommondBase):
     title = models.CharField(max_length=60)
     content = HTMLField(max_length=5000)
     cover_image_url = models.URLField(max_length=250, blank=True)
-    cover_intro = HTMLField(max_length=1000)
+    cover_intro = HTMLField(max_length=1000, blank=True)
     tags = models.ManyToManyField(Tag)
     publish = models.BooleanField(default=False)
 

@@ -1,11 +1,11 @@
 from django import forms
-from tinymce.widgets import TinyMCE
+from django.forms import fields
 
 from .models import Artikel
 
 
 class ArtikelForm(forms.ModelForm):
-    # content = forms.TextInput(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    cover_image_url = forms.URLField(required=True, max_length=250)
 
     class Meta:
         model = Artikel
