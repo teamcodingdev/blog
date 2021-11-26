@@ -5,13 +5,15 @@ services:
     build: ./nginx
     restart: always
     ports:
-      - 80:80
+      - 8001:80
     depends_on:
       - web
     volumes:
       - ./nginx/:/src/nginx/
       - static_volume:/env_root/static_root/
       - media_volume:/env_root/media_root/
+    networks:
+      - webblog
   web:
     build: .
     restart: always
@@ -24,7 +26,13 @@ services:
       - media_volume:/env_root/media_root/
     env_file:
       - ./.env
+    networks:
+      - webblog
 
 volumes:
   static_volume:
   media_volume:
+
+networks:
+  webblog:
+    external: true
